@@ -1,0 +1,68 @@
+PyTN talk proposal:
+---------------------------
+
+Title:
+- "5 python recipes that blew my noobie mind!"
+
+Introduction:
+-----------------
+
+- Name: Marcus Willock
+- Alias: Crazcalm
+- Company: Adcade
+- Bio: [Insert bio]
+
+Question dict:
+-------------------
+
+1. What problem is this recipe solving?
+2. Why was my mind blown away by this?
+3. How has this knowledge helped me?
+
+Recipe 1:
+-------------
+
+- Overarching topic: yields/generators
+- Source of recipe: Python cookbook 4.14
+
+1. Flattening nested iterators.
+
+2. When you first get into programming, you learn about 1 dimensional arrays. Everything is linear and the indexes start at 0 and increment up. Easy stuff, right? Then you learn about 2 dimensional, which are single arrays with arrays as elements. In concept, it is easy, but, for some reason, iterating over them can be frustrating, annoying and oddly difficult. One classic problem that every noobie should attempt is flattening nested arrays. I do not remember how I went about solving it on my first attempt, but i do remember it being a painful process and my end solution was filled with hard coded indexes. So, when I saw this recipe, I was thrilled that I would never have to struggle with this problem again, and it works for arrays nested down to an abritrary depth. Crazy, right?! I struggled with 2 dimentional arrays and the python cookbook as 
+ 
+3.
+   
+
+Recipe 2:
+------------
+
+- Overarching topic: Sending emails
+- Source: Unknown, but python sys admin book has it.
+  - Python for Unix and Linux System Administration, page: 142
+1. 
+
+2.
+
+3.
+
+
+Recipe 3:
+------------
+
+- Overarching topic: Sorting dictionaries
+- Source: Python cookbook 1.13
+
+1.
+
+2.
+
+3.
+
+Recipe 4:
+-------------
+
+- Overarching topic: itertools
+- Source: Most of python cookbook chapter 4
+
+
+
+Recipe
