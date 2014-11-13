@@ -1,0 +1,8 @@
+TODO list:
+---------
+
+1. I need to make these work in python 3.4
+
+2. Make an email class (Like the one I made for work)
+
+3. Make an text msg class or add this feature to the email class
