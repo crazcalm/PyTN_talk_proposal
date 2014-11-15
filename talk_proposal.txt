@@ -2,7 +2,7 @@ PyTN talk proposal:
 ---------------------------
 
 Title:
-- "5 python recipes that blew my noobie mind!"
+- "4 python recipes that blew my noobie mind!"
 
 Introduction:
 -----------------
@@ -29,21 +29,30 @@ Recipe 1:
 
 2. When you first get into programming, you learn about 1 dimensional arrays. Everything is linear and the indexes start at 0 and increment up. Easy stuff, right? Then you learn about 2 dimensional, which are single arrays with arrays as elements. In concept, it is easy, but, for some reason, iterating over them can be frustrating, annoying and oddly difficult. One classic problem that every noobie should attempt is flattening nested arrays. I do not remember how I went about solving it on my first attempt, but i do remember it being a painful process and my end solution was filled with hard coded indexes. So, when I saw this recipe, I was thrilled that I would never have to struggle with this problem again, and it works for arrays nested down to an abritrary depth. Crazy, right?! I struggled with 2 dimentional arrays and the python cookbook as 
  
-3.
+3. This recipe was my introduction to generators, which are awesome! Once I knew that I using generators could better the performance of the code and lower the chance of writing code that bottle necks at some for loop, I started using them wherever i could. I have even used generators to solve interview questions! The funniest experience I have in an interview was when I used generators to solve the fibinacci sequence. The experience was funny because I had the intervier beat! This guy had three or four set questions the went like this; 
+
+a. Solve the fib sequence
+b. How would you write your code in such a way to got only the fib number you want (ie. the 10th fib number).
+c. How would you write the code so that you get a range of fib numbers?
+
+Note: Show FIb code.
+
+Because I used generators to solve the first question, I didn't have to bother trying to figure out how to solve the following questions in a new way. The answer to a was writing the generator, the answer to b is implementing the generator to fit your needs, and the answer to c is to know that python comes with something in the standard library (I think is called iterslice) that slices generators by giving you the values you want and ignoring the ones that you do not want.
    
 
 Recipe 2:
 ------------
 
 - Overarching topic: Sending emails
-- Source: Unknown, but python sys admin book has it.
-  - Python for Unix and Linux System Administration, page: 142
-1. 
+- Source: Unknown (I cannot remember the source)
+  - I saved the code to my 2014 scripts repo
+1. This recipe allows you to send emails! 
 
-2.
+2. I was blown away because this recipe I allowed me to use code to speak to the outside world! I was (and still am) one of those hackathon kids that were constantly told how hard it is to send emails and that we should use the sendgrid api because they have solved this problem for you. As true as this may be, I still ventured off to try to send my own emails, and I have never looked back. After learning how to sent emails, I discovered how to send text messages, which is even simplier!
 
-3.
+3. I cannot express how useful the ability to send emails and text messages has been in my life. At one hackathon (I think it was the princeton one. Note: find project) , I created a project out of passion. That weekend was when the big typhoon hit the philipeans. One of my best friends lives out there and I was pissed at myself that I didn't know about a natural disaster, that was well documented ad expected, was going to put my friends in danger. That weekend, I built a personal application that used the facebook api (which has now changed) to get the hometowns and current locations of my friend. That information was placed in a sqlite database. I then wrote a web crawler that went threw a natural disaster website and scanned the articles. If the hometown or current local of one of my friends was in that article, then a link to that article and the friend that was potentially in danger information was sent to me via an email. At the time, I had this grand plan of putting it on a server and running in a cron job so that a natural disaster that could pententially endanger my friends never, ever, snuck up on me again.
 
+Cute side story: The ability to send text messages saved my life when my girlfriend didn't have a cell phone for a 2 months. At the time, I didn't know of this script, but I was a recent google voice user. I ended up using the google voice api to write a script that allowed her to send me text messages from my google voice account, which was registered as my actual phone number. The google voice API has been deprecated for a very long time now, so that script no longer works, but here is how you can do it without google voice (TODO: write that script )
 
 Recipe 3:
 ------------
@@ -51,18 +60,23 @@ Recipe 3:
 - Overarching topic: Sorting dictionaries
 - Source: Python cookbook 1.13
 
-1.
+1. How to sort a list of dictionaries.
 
-2.
+2. As a noobie, you have no idea how powerful this is until you start messing around with databases or web api because all of those, at least all the ones that I have interfaced with, are list of dictionaries. Before I knew this recipe, I, thankfully, had no reason to sort list of dictionaries. However, the thought of sorting list of dictionaries without this recipe (or the use of lamndas) scares me. Let's not think about it...
 
-3.
+3. As a noobie, this recipe has gotten my a job interview. A recuiter at a company i applied to sent me a take home coding quiz to do that involved using the api to a website, say Reddit, and sorting the JSON it returned a key, say author last name. Before taking a in depth look at the project, I told that recruiter that I would have this done in a week. I didn't think it would take me a week, but I was busy with other things. Anyway, when I started working on the project, I first went to github for some open source code that I could leverage. I hit the jackpot! I found an API wrapper built in python. From that point onward, all I had to do was use the interface that someone else had created to run the query that I wanted and sort the data it returned. The sorting code was around 10 lines of code. My code was so minimal that I felt bad enough to write a slew of test suites and an automation script to run their quiz. After I landed the in person interview, the interviewer told me that he was interested in me because I was the only person who forked an exisiting project on github and built their code on top of it. 
+
 
 Recipe 4:
 -------------
 
-- Overarching topic: itertools
-- Source: Most of python cookbook chapter 4
+- Overarching topic: subprocess module
+- Source: find one!
+
+1. How to run termanal commands in your python script.
+
+2. This blew my noobie mind for 2 reasons. One, I have this painful memory at the first day of my first (and only) intership where i had to take that the files in a directory (all sql files) and run them through a postgres command that would reset the database. My boss told me that I could use any language that I wanted to write the script and, at the time, I couldn't think of a way to do that in python, so I wrote it in ruby... Reason number two is that this module allows me to leverage termianl commands, which provide a ton of functionality, in my python code!
+
+3. In one of the NYC hackathons that I recently attended, I built a commandline tool called DiscoverMyUnixCommands, which allowed you to search and look through the usr/bin and the usr/local/bin directories. Without subprocess, I would have had to create filter functions, serach functions, and print_to_screen function that formatted everything right. With subprocess, all i had to do was use the "ls" and "grep" command in my python script. Everything else was taken care of for me! "ls" gave me my list of items in those directories (you can ls muiltiple directories at once!) and "grep" filtered and formated my output. It was Awesome!
 
 
-
-Recipe
