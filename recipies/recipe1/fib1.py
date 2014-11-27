@@ -23,7 +23,7 @@ def fib1(limit=10):
     """    
     nth_number = limit
     
-    if limit <= 2:
+    if limit <= 1:
         answer = [0]
 
     elif limit == 2:
@@ -73,7 +73,60 @@ def fib2(nth_num=10):
 
     return fib2
 
+"""
+Solve with generators
+"""
+
+def fib3(nth_num=10):
+    """
+    A generator that yields fib numbers
+    """
+
+    # Base case
+    fib1 = 0
+    fib2 = 1
+
+    if nth_num <= 1:
+        yield fib1
+
+    elif nth_num == 2:
+        yield fib1
+        yield fib2
+
+    else:
+
+        yield fib1
+        yield fib2
+        current_fib = 2
+
+        while nth_num - current_fib > 0:
+            fib1, fib2 = fib2, fib1 + fib2
+            yield fib2
+            current_fib = current_fib + 1
+
+
+def fib_list(limit=10):
+
+    answer = []
+
+    for fib_num in fib3(limit):
+        answer.append(fib_num)
+
+    return answer
+
+
+def nth_fib_num(nth_num=10):
+    
+    answer = 0
+
+    for fib_num in fib3(nth_num):
+        answer = fib_num
+
+    return answer
+
+
 if __name__ == "__main__":
     print(fib1(10))
     print(fib2(10))
-     
+    print(fib_list(10))
+    print(nth_fib_num(10))
