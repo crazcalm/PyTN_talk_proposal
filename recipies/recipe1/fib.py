@@ -40,7 +40,7 @@ def fib1(limit=10):
 
         answer = fib_num
 
-    return fib_num
+    return answer
 
 
 """
@@ -71,7 +71,7 @@ def fib2(nth_num=10):
 
         answer = fib2
 
-    return fib2
+    return answer
 
 """
 Solve with generators
